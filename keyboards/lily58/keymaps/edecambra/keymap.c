@@ -119,9 +119,9 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case MT(MOD_LSFT,KC_SPC):
-            return TAPPING_TERM - 21;
+            return TAPPING_TERM - 25;
         case MT(MOD_RSFT,KC_BSPC):
-            return TAPPING_TERM - 10;
+            return TAPPING_TERM - 15;
         default:
             return TAPPING_TERM;
     }

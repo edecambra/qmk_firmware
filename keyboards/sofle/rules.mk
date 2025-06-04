@@ -1,1 +1,2 @@
 DEFAULT_FOLDER = sofle/rev1
+VIA_ENABLE = yes

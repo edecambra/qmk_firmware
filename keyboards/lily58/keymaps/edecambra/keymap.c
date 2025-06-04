@@ -40,11 +40,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
  [_QWERTY] = LAYOUT(
-  KC_EQUAL, KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
-  KC_ESC,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
-  KC_LALT,  KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-  KC_LCTL,  KC_Z,   MT(MOD_LGUI,KC_X),    KC_C,    KC_V,    KC_B, KC_LBRC,  KC_RBRC,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RCTL,
-     KC_MS_BTN1,  KC_MS_BTN2, LT(NUMSYM, KC_TAB),MT(MOD_LSFT,KC_SPC),MT(MOD_RSFT,KC_BSPC),  LT(NAVI,KC_ENT),  KC_MS_BTN1,  MT(KC_LNUM,KC_MS_BTN2)
+    KC_EQUAL, KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
+    KC_ESC,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
+    KC_LALT,  KC_A,   KC_S,MT(MOD_LSFT,KC_D),KC_F,KC_G,                     KC_H,    KC_J,MT(MOD_RSFT,KC_K),    KC_L,    KC_SCLN, KC_QUOT,
+    KC_LCTL,  KC_Z,MT(MOD_LGUI,KC_X),KC_C,  KC_V,KC_B,  KC_MUTE,  LALT(LCTL(KC_DEL)),  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RCTL,
+       KC_MS_BTN1,  KC_MS_BTN2, LT(NUMSYM, KC_TAB), MT(MOD_LSFT,KC_SPC),   MT(MOD_RSFT,KC_BSPC),  LT(NAVI,KC_ENT),  KC_MS_BTN1,  MT(KC_LNUM,KC_MS_BTN2)
 ),
 /* LOWER
  * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -62,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_NUMSYM] = LAYOUT(
   _______, _______, _______, _______, _______, _______,                   _______, _______, KC_SLSH ,KC_ASTR, XXXXXXX, _______,
-  KC_GRV,  KC_F2,   KC_F3,  C(S(KC_TAB)), C(KC_TAB),  XXXXXXX,            XXXXXXX,   KC_7,   KC_8,   KC_9,   KC_MINS,  _______,
+  KC_GRV,  _______,   _______,  C(S(KC_TAB)), C(KC_TAB),  XXXXXXX,            XXXXXXX,   KC_7,   KC_8,   KC_9,   KC_MINS,  _______,
   _______, KC_LCBR, KC_LBRC, KC_RBRC,  KC_RCBR,    XXXXXXX,               XXXXXXX,   KC_4,   KC_5,   KC_6,   KC_PLUS, XXXXXXX,
   _______, _______, _______, _______ , _______, _______, _______, _______, XXXXXXX,   KC_1,   KC_2,   KC_3,   KC_DOT, KC_ENTER,
                              _______, KC_LNUM, _______, _______, _______,  KC_0, _______, _______
@@ -119,9 +119,9 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case MT(MOD_LSFT,KC_SPC):
-            return TAPPING_TERM - 25;
+            return TAPPING_TERM + 25;
         case MT(MOD_RSFT,KC_BSPC):
-            return TAPPING_TERM - 15;
+            return TAPPING_TERM + 25;
         default:
             return TAPPING_TERM;
     }

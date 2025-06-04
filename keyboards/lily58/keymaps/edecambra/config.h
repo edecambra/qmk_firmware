@@ -19,10 +19,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #pragma once
-
+#define TAPPING_TERM 200
 #define QUICK_TAP_TERM 180
-#define TAPPING_TERM 180
 #define PERMISSIVE_HOLD
+#define CHORAL_HOLD
 #define LOCKING_SUPPORT_ENABLE
 #define LOCKING_RESYNC_ENABLE
 
